@@ -156,25 +156,22 @@ async def activity(message: Message):
     conn.commit()
 
 # ===== СТАТА =====
-@dp.message_handler(commands=['stats'])
+@dp.message_handler(lambda message: message.text == '/stats')
 async def stats(message: Message):
     user_id = message.from_user.id
 
     cursor.execute("SELECT invites, activity FROM users WHERE user_id=?", (user_id,))
     row = cursor.fetchone()
 
-    invites = 0
-    activity = 0
-
-    if row:
-        invites = row[0]
-        activity = row[1]
+    invites = row[0] if row else 0
+    activity = row[1] if row else 0
 
     await message.answer(
-        "📊 Твоя статистика\n\n"
+        f"📊 Твоя статистика\n\n"
         f"Приглашено: {invites}\n"
         f"Активность: {activity}"
     )
+    
 # ===== ТОП В ЧАТЕ =====
 @dp.message_handler(commands=['404stat'])
 async def top(message: Message):
