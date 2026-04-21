@@ -71,6 +71,6 @@ async def rating(message: types.Message):
     await message.answer(text or "Пока пусто")
 
 # ===== СТАРТ =====
-if name == "__main__":
+if _name_ == "__main__":
     print("BOT STARTED")
     executor.start_polling(dp, skip_updates=True)
