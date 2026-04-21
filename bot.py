@@ -156,7 +156,7 @@ async def activity(message: Message):
     conn.commit()
 
 # ===== СТАТА =====
-@dp.message_handler(lambda message: message.text == '/stats')
+@dp.message_handler(lambda message: message.text and message.text.startswith('/stats'))
 async def stats(message: Message):
     user_id = message.from_user.id
 
