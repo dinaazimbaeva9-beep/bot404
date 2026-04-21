@@ -8,7 +8,7 @@ from aiogram.utils import executor
 
 # ===== НАСТРОЙКИ =====
 API_TOKEN = os.getenv("API_TOKEN") or "8634195009:AAHg9Cbk8D6H2BlTwh-hsHtT5Vs4VWQ0mvI"
-CHAT_ID = -8634195009      
+CHAT_ID = -1002796461600    
 CHAT_LINK = "https://t.me/+JURnZ-vcL_hlYzVi" 
 
 logging.basicConfig(level=logging.INFO)
