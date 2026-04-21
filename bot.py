@@ -147,7 +147,8 @@ async def activity(message: Message):
     last_message_time[user_id] = now
 
     cursor.execute("SELECT invited_by FROM users WHERE user_id=?", (user_id,))
-    row = cursor.fetchone()if row and row[0]:
+    row = cursor.fetchone()
+    if row and row[0]:
         inviter_id = row[0]
 
         cursor.execute(
