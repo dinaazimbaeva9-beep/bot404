@@ -7,7 +7,7 @@ from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils import executor
 
 API_TOKEN = os.getenv("API_TOKEN")
-CHAT_LINK = "https://t.me/ТВОЙ_ЧАТ"  # ← замени
+CHAT_LINK = "https://t.me/+JURnZ-vcL_hlYzVi"  # ← замени
 
 logging.basicConfig(level=logging.INFO)
 
